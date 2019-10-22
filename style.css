@@ -1,0 +1,261 @@
+
+        html,
+        body {
+            padding: 0%;
+            margin: 0%;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        #container {
+            background-color: #fff;
+            color: #3C454F;
+            display: flex;
+            flex-direction: row-reverse;
+            padding: 0%;
+            margin: 0%;
+        }
+
+        main {
+            width: 75%;
+            padding-left: 2%;
+        }
+
+        header {
+            font-size: 2em;
+        }
+
+        code {}
+
+        code div {
+            padding: 0.5%;
+            background-color: #f0f4ff;
+            padding-right: 30%;
+            width: 50%;
+            ;
+        }
+
+        .main-section {
+            margin-bottom: 3%;
+            /*the below will control the spacing between the lines of texts*/
+            line-height: 2;
+        }
+
+        .main-section *:not(.not-indented) {
+            margin-left: 3%;
+        }
+
+        nav {
+            width: 23%;
+            background-color: #f0f4ff;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            /*height of the nav is 100% of the viewport height*//
+        }
+
+        nav header {
+            height: 60px;line-height: 60px;            
+            /*same width as its parent, it is mendatory to mention exact width, because its position is fixed*/
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 23%;
+            text-align: center;
+            font-size: 1.5em;
+            word-wrap: break-word;
+            background-color: #3C454F;color:#fff;            
+        }
+
+        #links-container {
+            overflow-y: scroll;
+            height: 100%;
+            /*have to mention the height so that the scrollbar works properly*/
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .nav-link {
+            width: 100%;
+            border-top: 1px solid #3C454F;
+            text-decoration: none;
+            color: #3C454F;
+            font-size: 1.2em;
+            padding-top: 1.5%;
+            padding-bottom: 1.5%;
+        }
+
+        @keyframes move_filterscontainer_right {
+            0% {
+                left: -120%;
+            }
+
+            20% {
+                left: -80%;
+            }
+
+            40% {
+                left: -60%;
+            }
+
+            60% {
+                left: -40%;
+            }
+
+            80% {
+                left: -20%;
+            }
+
+            100% {
+                left: 0%;
+            }
+        }
+
+        @keyframes move_filterscontainer_left {
+            0% {
+                left: 0%;
+            }
+
+            20% {
+                left: -20%;
+            }
+
+            40% {
+                left: -40%;
+            }
+
+            60% {
+                left: -60%;
+            }
+
+            80% {
+                left: -80%;
+            }
+
+            100% {
+                left: -120%;
+            }
+        }
+
+
+        #small-screen-menu-button {
+            display: none;
+        }
+
+        @media screen and (max-width: 900px) {
+            p {
+                word-wrap: break-word;
+            }
+
+            main {
+                width: 100%;
+                font-size: 0.9em;
+            }
+
+            header {
+                font-size: 1.4em;
+            }
+
+            code div {
+                padding-right: 5%;
+                width: 90%;
+            }
+
+            .main-section {
+                margin-bottom: 5%;
+                line-height: 1.5;
+            }
+
+            .main-section *:not(.not-indented) {
+                margin-left: 1%;
+            }
+
+            #small-screen-menu-button {
+                display: block;
+                cursor: pointer;
+                color: #fff;
+                background-color: #3C454F;
+                opacity: 0.7;
+                border: none;
+                width: auto;
+                font-size: 1.5em;
+                padding-left: 3%;
+                padding-right: 3%;
+                padding-top: 0.5%;
+                padding-bottom: 1.5%;
+                border-radius: 0% 50% 50% 0%;
+                position: fixed;
+                z-index: 100;
+                top: 0.7%;
+                left: 0%;
+                box-shadow: 0px 0px 5px 2px #f0f4ff;
+            }
+
+            nav {
+                overflow-y: scroll;
+                height: 100%;
+                width: 90%;
+                position: fixed;
+                top:0;
+                z-index: 10;
+                animation-name: move_filterscontainer_left;
+                animation-duration: 0.5s;
+                animation-fill-mode: forwards;
+                /*so that this class will keep the styling specified in the step 100% of the animation*/
+            }
+            nav header {
+                height: 50px;
+                line-height: 50px;
+                /*line height is used to align the text vertically in the center*/                
+                width: 100%;
+                position:unset;
+                top:auto;left: auto;
+                /*same width as its parent, it is mendatory to mention exact width, because its position is relative*/
+                cursor: pointer;
+            }
+            #links-container {
+                margin-top: auto;
+                overflow-y:unset;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .nav-link {
+                height: 30px;
+                line-height: 30px;
+                font-size: 0.8em;
+            }
+
+            .nav_in_small_screens {
+                display: block;
+                animation-name: move_filterscontainer_right;
+                animation-duration: 0.5s;
+                animation-fill-mode: forwards;
+            }
+
+            .hidden_nav_in_small_screens {
+                animation-name: move_filterscontainer_left;
+                animation-duration: 0.5s;
+                animation-fill-mode: forwards;
+            }
+
+            
+            main {
+                width: 100%;
+                z-index: 5;
+            }
+        }
+
+        footer {
+            color: #3C454F;
+            text-align: center;
+            background-color: #f0f4ff;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 0.8em;
+        }
